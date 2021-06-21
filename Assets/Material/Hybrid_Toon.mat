@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hybrid_Toon
+  m_Shader: {fileID: 4800000, guid: 7716440586d458d4d87692f877a24324, type: 3}
+  m_ShaderKeywords: _DIFFUSEMODE_LAMBERT _IBLMODE_IBL _LIGHTOCCLUSION _PBRMETAL _SPECULARMODE_DISNEY
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MatCap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MixTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NonmetalMatCap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularDetailMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TangentNoise:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Anisotropic: 0
+    - _ClearCoat: 0
+    - _ClearCoatGloss: 0
+    - _Cloth: 0
+    - _DEBUG: 0
+    - _DarkThreshold: 0.5
+    - _Diffuse: 0
+    - _DiffuseHeightOffset: 1
+    - _DiffuseMode: 2
+    - _DiffuseOffsetSmooth: 1
+    - _FixTangent: 0
+    - _HeightOffset: 0
+    - _IBLMode: 0
+    - _IBLRoughness: 1
+    - _Layer1Offset: 0
+    - _Layer1RoughnessX: 1
+    - _Layer1RoughnessY: 1
+    - _Layer1Shininess: 0
+    - _Layer1ShininessDirection: 0
+    - _Layer1ShininessOffset: 0
+    - _Layer2Offset: 0
+    - _Layer2RoughnessX: 1
+    - _Layer2RoughnessY: 1
+    - _Layer2Shininess: 0
+    - _Layer2ShininessDirection: 0
+    - _Layer2ShininessOffset: 0
+    - _Layer3Offset: 0
+    - _Layer3RoughnessX: 1
+    - _Layer3RoughnessY: 1
+    - _Layer3Shininess: 0
+    - _Layer3ShininessDirection: 0
+    - _Layer3ShininessOffset: 1
+    - _LightOcclusion: 1
+    - _Metallic: 1
+    - _NormalScale: 1
+    - _NormalSoftness: 0
+    - _PBRMetal: 1
+    - _Parallax: 0
+    - _ParallaxMap: 0
+    - _RampHeightOffset: 1
+    - _RampOffsetSmooth: 1
+    - _RampSmooth: 0
+    - _RimLightExponent: 1
+    - _RimLightIntensity: 0
+    - _RimLightSmoothness: 0
+    - _Roughness: 0.196
+    - _ShadowFeather: 0.02
+    - _ShadowThreshold: 0.5
+    - _Shift1: 0
+    - _Shift2: 0
+    - _Specular1Intensity: 1
+    - _Specular2Intensity: 1
+    - _SpecularDetailMapTile: 1
+    - _SpecularExponent1: 200
+    - _SpecularExponent2: 200
+    - _SpecularIntensity: 1
+    - _SpecularMode: 3
+    - _SubsurfaceFalloff: 0
+    - _SubsurfaceIntensity: 0
+    - _TangentDistortion: 0
+    - _TangentRotation: 0
+    - _Test1: 1
+    - _Test2: 1
+    - _UseClearCoat: 0
+    - _UseFlowMap: 0
+    - _UseNoV: 0
+    - _UseNormalMap: 0
+    m_Colors:
+    - _DarkTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _EmissionTint: {r: 1, g: 1, b: 1, a: 1}
+    - _EyeForward: {r: 0, g: 0, b: 0, a: 0}
+    - _Iridescence: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _Layer1ShininessTint: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer1Tint: {r: 0.9, g: 0.9, b: 0.9, a: 0.3}
+    - _Layer2ShininessTint: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer2Tint: {r: 0.6, g: 0.6, b: 0.6, a: 0.5}
+    - _Layer3ShininessTint: {r: 0, g: 0, b: 0, a: 1}
+    - _Layer3Tint: {r: 0.29999998, g: 0.29999998, b: 0.29999998, a: 0.7}
+    - _MidTint: {r: 1, g: 0, b: 0, a: 1}
+    - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimLightViewDir: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowTint: {r: 0.6, g: 0.6, b: 0.6, a: 1}
+    - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularTint1: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularTint2: {r: 1, g: 1, b: 1, a: 1}
+    - _SubsurfaceTint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _ViewDirOffset: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
