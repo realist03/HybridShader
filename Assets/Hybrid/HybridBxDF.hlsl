@@ -187,9 +187,15 @@ half3 Approach_ClothBxDF(NPRSurfaceData surfaceData, half NoH, half VoH, half No
 void CalculateTangentRotateOffset(half rotation, half offset, half3 N, half3 oX, out half3 X, out half3 Y)
 {
 	half a = rotation / 180 * 3.1415926;
-	half3x3 tangent_roate = float3x3(cos(a), sin(a), 0,
-		                             sin(a), cos(a), 0,
-		                                  0,      0, 1);
+	//half3x3 tangent_roate = float3x3(cos(a), -sin(a), 0,
+	//	                             sin(a), cos(a), 0,
+	//	                                  0,      0, 1);
+
+	half3x3 tangent_roate = float3x3(N.x*N.x*(1-cos(a)) + cos(a), 	  N.x*N.y*(1-cos(a)) + N.z*sin(a), N.x*N.z*(1-cos(a)) - N.y*sin(a),
+		                             N.x*N.y*(1-cos(a)) - N.z*sin(a), N.y*N.y*(1-cos(a)) + cos(a), 	   N.y*N.z*(1-cos(a)) + N.z*sin(a),
+		                             N.x*N.z*(1-cos(a)) + N.y*sin(a), N.y*N.z*(1-cos(a)) - N.z*sin(a), N.z*N.z*(1-cos(a)) + cos(a));
+
+
 	X = mul(tangent_roate, oX);
 	X = ShiftTangent(X,N,offset);
 	Y = cross(N,X);

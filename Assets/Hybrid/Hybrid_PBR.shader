@@ -4,9 +4,10 @@
 	{
 		//[Lable(_Diffuse)]_Diffuse("Diffuse",Float) = 0
 		[KeywordEnum(Ramp,Disney,Lambert,Fabric,Orennayar)]_DiffuseMode("DiffuseMode",Float) = 0
-		[Texture(_Tint)]_BaseMap("BaseColor(RGB:Color, A:SSS)", 2D) = "white" {}
-		[HideInInspector]_Tint("Tint",Color) = (1,1,1,1)
-
+		[Texture(_BaseColor)]_BaseMap("BaseColor(RGB:Color, A:SSS)", 2D) = "white" {}
+		[HideInInspector]_BaseColor("Tint",Color) = (1,1,1,1)
+		[Toggle(_ALPHATEST_ON)]_AlphaTest("Alpha Test", Float) = 0
+		_Cutoff("Cutoff", Range(0,1)) = 0.5
 
 		[ShowIf(_DiffuseMode,0)]_RampTex("Ramp", 2D) = "white" {}
 		[Texture]_MixTex("MixTex(R:Metallic:r, G:Roughness:g, B:Oclussion)", 2D) = "white" {}
@@ -49,7 +50,7 @@
 		[space(5)][Header(Specular)]
 		[KeywordEnum(None,Ramp,Cel,Disney,Mobile,Skin,Hair,Cloth,BlinnPhong)]_SpecularMode("SpecularMode",Float) = 0
 		[KeywordEnum(IBL,MatCapSheet,MatCap)]_IBLMode("IBL Mode",Float) = 0
-		[Toggle(_PBRMETAL)]_PBRMetal("PBR Metal",Float) = 0
+		[Toggle(_PBRMETAL)]_PBRMetal("PBR Metal",Float) = 1
 		_SpecularTint("SpecularTint",Color) = (1,1,1,1)
 		_Metallic("Metallic",Range(0,1)) = 1
 		_Roughness("Roughness",Range(0,1)) = 1
@@ -58,7 +59,7 @@
 		_Iridescence("Iridescence",Color) = (0.5,0.5,0.5,0)
 		_Anisotropic("Anisotropic",Range(0,1)) = 0
 		_TangentDistortion("TangentDistortion",Range(0,10)) = 0
-		_TangentRotation("TangentRotation",Range(0,360)) = 0
+		_TangentRotation("TangentRotation",Range(-360,360)) = 0
 		
 		[space(5)][Header(RimLight)]
 		_RimLightViewDir("RimLightViewDir",Vector) = (1,1,1,1) 
@@ -92,12 +93,12 @@
 		
 		[space(5)][Header(Hair)]
 		[HDR]_SpecularTint1("SpecularTint1",Color) = (1,1,1,1)
-		_Specular1Intensity("Specular1 Intensity",Range(0,3)) = 1
+		_Specular1Intensity("Specular1 Intensity",Range(0,300)) = 1
 		_SpecularExponent1("SpecularExponent1",Float) = 200
 		_Shift1("Shift1",Range(-10,10)) = 0
 		
 		[HDR]_SpecularTint2("SpecularTint2",Color) = (1,1,1,1)
-		_Specular2Intensity("Specular2 Intensity",Range(0,3)) = 1
+		_Specular2Intensity("Specular2 Intensity",Range(0,300)) = 1
 		_SpecularExponent2("SpecularExponent2",Float) = 200
 		_Shift2("Shift2",Range(-10,10)) = 0
 
@@ -127,16 +128,17 @@
 			#pragma exclude_renderers d3d11_9x
 			#pragma vertex HybridBaseVertex
 			#pragma fragment HybridPBRFragment
-			#pragma shader_feature _DIFFUSEMODE_RAMP _DIFFUSEMODE_DISNEY _DIFFUSEMODE_LAMBERT _DIFFUSEMODE_FABRIC _DIFFUSEMODE_ORENNAYAR
-			#pragma shader_feature _SPECULARMODE_NONE _SPECULARMODE_RAMP _SPECULARMODE_CEL _SPECULARMODE_DISNEY _SPECULARMODE_MOBILE _SPECULARMODE_SKIN _SPECULARMODE_HAIR _SPECULARMODE_CLOTH _SPECULARMODE_BLINNPHONG
-			#pragma shader_feature _IBLMODE_IBL _IBLMODE_MATCAPSHEET _IBLMODE_MATCAP
-			#pragma shader_feature _USENOV
-			#pragma shader_feature _PBRMETAL
-			#pragma shader_feature _FIXTANGENT
-			#pragma shader_feature _USEFLOWMAP
-			#pragma shader_feature _USENORMALMAP
-			#pragma shader_feature _USECLEARCOAT
-			#pragma shader_feature _DEBUG
+			#pragma shader_feature_local _DIFFUSEMODE_RAMP _DIFFUSEMODE_DISNEY _DIFFUSEMODE_LAMBERT _DIFFUSEMODE_FABRIC _DIFFUSEMODE_ORENNAYAR
+			#pragma shader_feature_local _SPECULARMODE_NONE _SPECULARMODE_RAMP _SPECULARMODE_CEL _SPECULARMODE_DISNEY _SPECULARMODE_MOBILE _SPECULARMODE_SKIN _SPECULARMODE_HAIR _SPECULARMODE_CLOTH _SPECULARMODE_BLINNPHONG
+			#pragma shader_feature_local _IBLMODE_IBL _IBLMODE_MATCAPSHEET _IBLMODE_MATCAP
+			#pragma shader_feature_local _USENOV
+			#pragma shader_feature_local _PBRMETAL
+			#pragma shader_feature_local _FIXTANGENT
+			#pragma shader_feature_local _USEFLOWMAP
+			#pragma shader_feature_local _USENORMALMAP
+			#pragma shader_feature_local _USECLEARCOAT
+			#pragma shader_feature_local _DEBUG
+			#pragma shader_feature _ALPHATEST_ON
             #pragma multi_compile _ _SHADOWS_SOFT _SHADOWS_PCSS
 			#pragma multi_compile _ _MAIN_LIGHT_SHADOWS
 			#pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE
@@ -166,7 +168,6 @@
 			// -------------------------------------
 			// Material Keywords
 			#pragma shader_feature _ALPHATEST_ON
-			#pragma shader_feature _GLOSSINESS_FROM_BASE_ALPHA
 		
 			//--------------------------------------
 			// GPU Instancing

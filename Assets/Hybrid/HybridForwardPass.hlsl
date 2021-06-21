@@ -214,7 +214,7 @@ half4 HybridToonFragment(Varyings input) : SV_Target
 #ifdef _DEBUG
 	return debug.xyzz;
 #endif
-	half alpha = OutputAlpha(color.a); 
+	half alpha = OutputAlpha(color.a,_AlphaTest); 
 	
 	return color;
 

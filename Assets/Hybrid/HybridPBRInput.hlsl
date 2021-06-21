@@ -47,7 +47,7 @@ half2 _FurOffset;
 
 //Color
 half3 _LightTint;
-half3 _Tint;
+half4 _BaseColor;
 half3 _ShadowTint;
 half3 _DarkTint;
 half4 _Layer1Tint;
@@ -133,6 +133,8 @@ half _Offset;
 half _FurAO;
 half _FurAOPow;
 half2 _SmoothStep;
+half _AlphaTest;
+half _Cutoff;
 //CBUFFER_END
 
 //ToonParamter
@@ -253,11 +255,14 @@ void InitializeNPRSurfaceData(float2 uv, float3 viewDirForParallax, out NPRSurfa
 	surfaceData.metallic = max(mixTex.r * _Metallic,HALF_MIN);
 	surfaceData.roughness = max(mixTex.g * _Roughness,HALF_MIN);
     surfaceData.occlusion = mixTex.b;
+	surfaceData.subsurface = mixTex.a * _SubsurfaceIntensity;
 
 	half4 mainTex = SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,uv);
-    surfaceData.baseColor = (mainTex.rgb) * _Tint;
+    surfaceData.baseColor = (mainTex.rgb) * _BaseColor;
+    surfaceData.alpha = mainTex.a;
+    AlphaDiscard(surfaceData.alpha, _Cutoff);
+
 	surfaceData.shadowTint = surfaceData.baseColor * _ShadowTint;
-	surfaceData.subsurface = mainTex.a * _SubsurfaceIntensity;
 
     half4 normalTex = SAMPLE_TEXTURE2D(_NormalMap, sampler_NormalMap, uv);
 	surfaceData.normalTS = UnpackNormalScale(normalTex, _NormalScale);
