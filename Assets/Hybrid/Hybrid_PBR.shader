@@ -43,7 +43,7 @@
 		_Layer3Offset("Layer3Offset",Range(-0.5,0.5)) = 0
 
 		[space(5)][Header(Subsurface)]
-		_SubsurfaceTint("SubsurfaceTint", Color) = (1,1,1,1)
+		_SubsurfaceTint("SubsurfaceTint", Color) = (1,0.25,0,1)
 		_SubsurfaceIntensity("SubsurfaceIntensity",Range(0,5)) = 0
 		_SubsurfaceFalloff("SubsurfaceFalloff",Range(0,5)) = 0
 

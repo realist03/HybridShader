@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: eye 2
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _RECEIVE_SHADOWS_OFF
+  m_Shader: {fileID: 4800000, guid: e8b3127e33aa8884f826ff1da2d02f71, type: 3}
+  m_ShaderKeywords: _DIFFUSEMODE_DISNEY _IBLMODE_IBL _RECEIVE_SHADOWS_OFF _SPECULARMODE_DISNEY
+    _USENORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
   m_SavedProperties:
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 63c053cd46de36c4983254d011824de1, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap:
@@ -108,6 +108,7 @@ Material:
     m_Floats:
     - _ALPHATEST_ON: 0
     - _AlphaClip: 0
+    - _AlphaTest: 0
     - _Anisotropic: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -134,7 +135,7 @@ Material:
     - _GlossyReflections: 0
     - _HeightOffset: 0
     - _IBLMode: 0
-    - _IBLRoughness: 0
+    - _IBLRoughness: 1
     - _Layer1Offset: 0
     - _Layer1RoughnessX: 1
     - _Layer1RoughnessY: 1
@@ -167,7 +168,7 @@ Material:
     - _RimLightExponent: 1
     - _RimLightIntensity: 0
     - _RimLightSmoothness: 0
-    - _Roughness: 0.024
+    - _Roughness: 1
     - _Shift1: 0
     - _Shift2: 0
     - _Shininess: 0
@@ -181,7 +182,7 @@ Material:
     - _SpecularExponent2: 200
     - _SpecularHighlights: 1
     - _SpecularIntensity: 1
-    - _SpecularMode: 5
+    - _SpecularMode: 3
     - _SrcBlend: 5
     - _SubsurfaceFalloff: 0
     - _SubsurfaceIntensity: 0
@@ -195,7 +196,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 0.2}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EyeForward: {r: 0, g: 0, b: 0, a: 0}

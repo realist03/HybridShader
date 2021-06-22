@@ -603,6 +603,8 @@ half4 HybridPBR(NPRInputData inputData, NPRSurfaceData surfaceData)
 		color.rgb += ClearCoatIndirectLight(inputData,surfaceData);
 	#endif
 
+	color.a = surfaceData.alpha;
+
 	return color;
 }
 

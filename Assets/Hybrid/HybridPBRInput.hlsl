@@ -259,7 +259,7 @@ void InitializeNPRSurfaceData(float2 uv, float3 viewDirForParallax, out NPRSurfa
 
 	half4 mainTex = SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,uv);
     surfaceData.baseColor = (mainTex.rgb) * _BaseColor;
-    surfaceData.alpha = mainTex.a;
+    surfaceData.alpha = mainTex.a * _BaseColor.a;
     AlphaDiscard(surfaceData.alpha, _Cutoff);
 
 	surfaceData.shadowTint = surfaceData.baseColor * _ShadowTint;

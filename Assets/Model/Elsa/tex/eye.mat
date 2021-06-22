@@ -55,11 +55,13 @@ Material:
     m_Floats:
     - _ALPHATEST_ON: 0
     - _AlphaClip: 0
+    - _AlphaTest: 0
     - _Anisotropic: 0
     - _ClearCoat: 0
     - _ClearCoatGloss: 0
     - _Clip: 0.5
     - _Cloth: 0
+    - _Cutoff: 0.5
     - _DEBUG: 0
     - _DiffuseHeightOffset: 1
     - _DiffuseMode: 1
@@ -114,6 +116,7 @@ Material:
     - _UseNoV: 0
     - _UseNormalMap: 1
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EyeForward: {r: 0, g: 0, b: 0, a: 0}
     - _Iridescence: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _Layer1ShininessTint: {r: 0, g: 0, b: 0, a: 1}

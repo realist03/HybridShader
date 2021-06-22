@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: hair 1
   m_Shader: {fileID: 4800000, guid: 7716440586d458d4d87692f877a24324, type: 3}
-  m_ShaderKeywords: _ALPHACLIP _ALPHATEST_ON _DIFFUSEMODE_DISNEY _IBLMODE_IBL _PBRMETAL
-    _SPECULARMODE_HAIR _USENORMALMAP
+  m_ShaderKeywords: _ALPHATEST_ON _DIFFUSEMODE_DISNEY _IBLMODE_IBL _PBRMETAL _SPECULARMODE_HAIR
+    _USENORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -107,6 +107,7 @@ Material:
     m_Floats:
     - _ALPHATEST_ON: 1
     - _AlphaClip: 1
+    - _AlphaTest: 1
     - _Anisotropic: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -166,14 +167,14 @@ Material:
     - _RimLightIntensity: 0
     - _RimLightSmoothness: 0
     - _Roughness: 1
-    - _Shift1: -1
-    - _Shift2: -0.9
+    - _Shift1: -0.6
+    - _Shift2: -0.47
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _Specular1Intensity: 57
-    - _Specular2Intensity: 300
+    - _Specular1Intensity: 62
+    - _Specular2Intensity: 101
     - _SpecularExponent1: 200
-    - _SpecularExponent2: 5
+    - _SpecularExponent2: 100
     - _SpecularHighlights: 1
     - _SpecularIntensity: 1
     - _SpecularMode: 6
@@ -200,15 +201,15 @@ Material:
     - _Layer2ShininessTint: {r: 0, g: 0, b: 0, a: 1}
     - _Layer2Tint: {r: 0.6, g: 0.6, b: 0.6, a: 0.5}
     - _Layer3ShininessTint: {r: 0, g: 0, b: 0, a: 1}
-    - _Layer3Tint: {r: 0.29999998, g: 0.29999998, b: 0.29999998, a: 0.7}
+    - _Layer3Tint: {r: 0.29999995, g: 0.29999995, b: 0.29999995, a: 0.7}
     - _RimLightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimLightViewDir: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularTint: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularTint1: {r: 1, g: 0.52337325, b: 0.043000042, a: 1}
-    - _SpecularTint2: {r: 1, g: 0.5558139, b: 0, a: 1}
+    - _SpecularTint1: {r: 1, g: 0.5778302, b: 0.15566039, a: 1}
+    - _SpecularTint2: {r: 1, g: 0.42352942, b: 0.25, a: 1}
     - _SubsurfaceTint: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
     - _ViewDirOffset: {r: 0, g: 0, b: 0, a: 0}
